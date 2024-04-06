@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Recognition Results</title>
+</head>
+<body>
+    <h1>Face Recognition Results</h1>
+    {% for timestamp, img in details %}
+        <p>Date: {{ timestamp.split(" ")[0] }}, Time: {{ timestamp.split(" ")[1] }}</p>
+        <img src="/detected_faces/{{ timestamp }}.jpg" alt="Detected Face">
+    {% endfor %}
+</body>
+</html>

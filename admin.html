@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+      body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(./Login/bg1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: gradient 3s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {background-position: 0%;}
+            50% {background-position: 100%;}
+            100% {background-position: 0%;}
+        }
+
+        form {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), 0 0 0 10px rgba(255, 255, 255, 0.2);
+            animation: form-appear 1s ease forwards;
+            text-align: center; /* Center align the buttons */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #333;
+            animation: label-appear 0.5s ease forwards;
+        }
+
+        input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 25px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+            animation: input-appear 0.5s ease forwards;
+        }
+
+        input[type="date"]:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        button {
+            padding: 15px 40px;
+            background-color: #184274;
+            color: white;
+            border: none;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            animation: button-appear 0.5s ease forwards;
+        }
+
+        button:hover {
+            background-color: #356bac;
+        }
+
+        /* Additional styling */
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .back-button {
+            padding: 15px 40px;
+            background-color: #28a745; /* Green color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            animation: button-appear 0.5s ease forwards;
+            margin-left: 10px; /* Adjust margin as needed */
+        }
+
+        .back-button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        @keyframes form-appear {
+            0% {transform: translateY(-50px); opacity: 0;}
+            100% {transform: translateY(0); opacity: 1;}
+        }
+
+        @keyframes label-appear {
+            0% {transform: translateY(10px); opacity: 0;}
+            100% {transform: translateY(0); opacity: 1;}
+        }
+
+        @keyframes input-appear {
+            0% {transform: translateY(10px); opacity: 0;}
+            100% {transform: translateY(0); opacity: 1;}
+        }
+
+        @keyframes button-appear {
+            0% {transform: translateY(10px); opacity: 0;}
+            100% {transform: translateY(0); opacity: 1;}
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL Data with Date Filter</title>
+</head>
+<body>
+    <form action="filter_data.php" method="GET">
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date">
+
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date">
+
+        <button type="submit">Filter Data</button>
+        <a href="./Login/home.php">
+            <button type="button" class="back-button">&#8592;&nbsp;Back</button>
+        </a>
+    </form>
+</body>
+</html>
